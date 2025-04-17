@@ -1,0 +1,42 @@
+
+.main{
+
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(69, 61, 61);
+
+}
+
+.filtr{
+
+    height: 100vh;
+    float: left;    
+    width: 20%;
+    background-color: rgb(51, 50, 50);
+    border-right: 1px solid rgb(55, 53, 53);
+
+}
+
+
+.main2{
+
+    height: 100vh;
+    float: left;
+    width: 80%;
+    background-color: rgb(69, 61, 61);
+
+}
+
+    .show{
+
+        margin: 1vh;
+        padding: 1vh;
+        float: left;
+        height: 30vh;
+        width: 30%;
+        background-color: rgb(222, 230, 238);
+        z-index: 10;
+        border-radius: 1%;
+
+    }
+

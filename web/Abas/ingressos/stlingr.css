@@ -1,0 +1,46 @@
+body{
+
+    background-color:  rgb(69, 61, 61);
+}
+
+
+.centr{
+
+    background-color: rgb(69, 61, 61);
+
+}
+
+
+
+    .maining{
+
+        color: white;
+        float: left;
+        position: sticky;
+        width: 20vw;
+        height: 89.8vh;
+        padding: 1vh;
+        border-right: 2px solid rgb(43, 38, 38);
+        background-color: rgb(29, 27, 27);
+
+    }
+
+    .ingress{
+
+        float: left;
+        padding: 2vh;
+        height: 89.9vh;
+        width: 79vw;
+        background-color: rgb(69, 61, 61);
+
+    }
+
+
+.img{
+
+    border: 1px solid white;
+    margin-left: 2.5vw;
+    width: 70%;
+    border-radius: 50%;
+
+}

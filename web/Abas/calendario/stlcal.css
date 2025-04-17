@@ -1,0 +1,16 @@
+
+.mainc{
+    background-image: url('SAVETHEDATE.jpg');
+    background-repeat: repeat;
+    justify-content: center; 
+
+}
+
+
+.main{
+
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(69, 61, 61);
+
+}
