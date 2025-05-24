@@ -5,6 +5,7 @@ session_start();
 
 function mdft(){
 
+    $nvft = $_POST['nvfoto']
 
     $servername = "localhost";
     $username = "root";
@@ -14,7 +15,7 @@ function mdft(){
 
     $sql = "UPDATE usuarios SET foto = 'https://i.scdn.co/image/ab67616d0000b2731f829ea9c2c7ffcec1a3c857' WHERE ID = ".$_SESSION['id'];
     
-    loadss();
+    $_SESSION['foto'] = $nvft;
 
     $conn->query($sql);
     $conn->close(); 
@@ -80,7 +81,6 @@ function mdsnh(){
 
     $sql = "UPDATE usuarios SET senha = 'https://p2.trrsf.com/image/fget/cf/1200/1200/middle/images.terra.com/2018/07/17/1531863463846.jpg' WHERE ID = ".$_SESSION['id'];
 
-    loadss();
 
     $conn->query($sql);
     $conn->close(); 
@@ -135,7 +135,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <br>    
 
         <form method="POST" name="mudarft" action="<?php echo $_SERVER['PHP_SELF'];?>">
-            <input type="text">        
+            <input type="text" name="nvfoto">        
             <br>
             
             <input type="submit" name="mudarft">
