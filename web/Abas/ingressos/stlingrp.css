@@ -2,18 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-
 .russo-one-regular {
     font-family: "Russo One", sans-serif;
     font-weight: 400;
     font-style: normal;
-}
-  
-.inter-main {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: normal;
 }
 
 
@@ -22,8 +14,6 @@
     box-sizing: border-box;
     padding: 0; 
     margin: 0;
-    font-weight: 400;
-    font-style: normal;
 
 }
 
@@ -31,6 +21,7 @@ p{
 
     font-family: "Inter", sans-serif;
     font-weight: 550;
+
 
 }
 
@@ -46,24 +37,25 @@ body{
 
     .top{
 
-        width: 99vw;
+        width: 100vw;
         height: 10vh;
         background-color: rgb(213, 14, 14);
         top: 0;
-        position: sticky;
+        position: fixed;
         z-index: 10;
         box-shadow: 0 1px 7px rgba(0, 0, 0, 0.5);
 
     }
 
 
-    .cnt{   
+    .cnt{
 
+        position: fixed;
         display: flex;
         justify-content: space-between;
         align-items: center; 
-        width: 99vw;
-        height: 100%;
+        width: 100vw;
+        height: 10vh;
         padding: 0;
 
     }
@@ -81,20 +73,30 @@ body{
 
     }
 
-        .logoi{
+            .logoi{
+
+                flex: 1;
+                display: flex;
+                justify-content: left; 
+                align-items: center; 
+                width: 20%;
+                height: 100%;
+                clip-path: polygon(0 0, 100% 0%, 70% 100%, 0% 100%);
+                background-color: black;
+                color: white;
+
+            }
 
 
-        flex: 1;
-        display: flex;
-        justify-content: left; 
-        align-items: center; 
-        width: 20%;
-        height: 100%;
-        clip-path: polygon(0 0, 100% 0%, 70% 100%, 0% 100%);
-        background-color: black;
-        color: white;
+            .plog{
 
-        }
+                font-family: "Russo One", sans-serif;
+                font-size: 7vh;        
+                cursor: pointer;
+                margin-left: 2%;
+
+            }
+
 
 
 
@@ -104,8 +106,8 @@ body{
         display: flex;
         justify-content: center; 
         align-items: center;    
-        height: 100%;    
-        width: 20%;
+        height: 10vh;    
+        width: 15%;
         
     }
 
@@ -116,12 +118,14 @@ body{
         display: flex;
         justify-content: center; 
         align-items: center;    
-        height: 100%;    
+        height: 10vh;    
         width: 15%;
         padding-right: 2%;
         padding-left: 2%;
 
     }
+
+
     
     
     .ptop{
@@ -146,10 +150,8 @@ body{
 
     .plog{
 
-        font-family: "Russo One", sans-serif;
         font-size: 7vh;        
         cursor: pointer;
-        margin-left: 2%;
 
     }
 
@@ -158,9 +160,10 @@ body{
 
     .clog{
 
-        margin-left: 25vw;
+        margin-top: 5%;
+        margin-left: 35vw;
         padding: 2%;    
-        width: 30vw;
+        width: 30%;
         align-items: center;
         background-color: blanchedalmond;
         z-index: 1000;

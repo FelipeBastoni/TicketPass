@@ -1,24 +1,29 @@
 <?php
 
-    session_start();
+session_start();
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "test";
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    $senhahash = md5($senha);
+    if ($_POST['Comprar']){
+
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "test";
+
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
+        $sql = "UPDATE usuarios SET ingressos = CONCAT('".$_POST['Comprar'].";', ingressos) WHERE ID = ".$_SESSION['id'];
+
+        $conn->query($sql);
+
+        $conn->close(); 
+
+        header("location: ../Abas/eventos/evnts.php");
 
 
-    $sql = "UPDATE usuarios SET ingressos = 'fff' WHERE ID = ".$_SESSION['id_user'];
+    }
 
-    $conn->query($sql);
+}
 
-    $conn->close(); 
-
-    header("location: ../Abas/eventos/evnts.php");
-
-
-    
 ?>

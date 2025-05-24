@@ -3,6 +3,16 @@
 
 session_start();
 
+if(isset($_SESSION['on'])){
+
+    $on = $_SESSION['on'];
+
+}else{
+
+    $on = "";
+
+}
+
 ?>
 
     
@@ -16,11 +26,11 @@ session_start();
     <title>TicketPass</title>
 
     <link rel="stylesheet" href="../../Geral/style.css">
-    <!-- <link rel="stylesheet" href=".css"> -->
+    <link rel="stylesheet" href="pagini.css">
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../../Geral/cods.js"></script>
-    
+
         
 </head>
 
@@ -34,14 +44,21 @@ session_start();
 
         <div class="logo" onclick="window.location.href='indexx.php';">
 
-            <p class="plog">TicketPass</p>
+        
+            <div class="logoi">
+
+                <p class="plog">TicketPass</p>
+
+            </div>
 
         </div>
 
         
+
+        
         <div class="itms" onclick="window.location.href='../eventos/evnts.php';">
-    
-            <p class="ptop">Eventos</p>
+
+            <p class="ptop">Eventos</p>        
 
         </div>
 
@@ -52,13 +69,21 @@ session_start();
 
         </div>
 
+        <?php
 
-        <div class="itms" onclick="window.location.href='../ingressos/ingr.php';">
+        if($on != ""){
+
+        echo "
+
+        <div class='itms' onclick=\"window.location.href='../ingressos/ingr.php';\">
     
-            <p class="ptop">Meus Ingressos</p>
+            <p class='ptop'>Meus Ingressos</p>
 
         </div>
 
+        ";}else{}
+
+        ?>
 
         <div class="itmlg" onclick= logon()>
 
@@ -73,6 +98,18 @@ session_start();
 
 <div id="cnttt"></div>
 
+<div class="pagini">
+    
+    <div class="carrossel">
+        </div>
 
+
+    <p style="color: white">Olá amigo</p>
+
+                            <input type="file" class="form-control" name="inputImagem" id="inputImagem" placeholder="Escolha uma imagem" />
+
+
+
+</div>
 
 </html>

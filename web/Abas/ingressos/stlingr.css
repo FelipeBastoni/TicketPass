@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+
 body{
 
     background-color:  rgb(69, 61, 61);
@@ -8,18 +12,19 @@ body{
 
     background-color: rgb(69, 61, 61);
 
-}
 
+}
 
 
     .maining{
 
+        margin-top: 10vh;
         color: white;
         float: left;
-        position: sticky;
+        position: fixed;
         width: 20vw;
-        height: 89.8vh;
-        padding: 1vh;
+        height: 100vh;
+        padding: 2vh;
         border-right: 2px solid rgb(43, 38, 38);
         background-color: rgb(29, 27, 27);
 
@@ -27,13 +32,18 @@ body{
 
     .ingress{
 
+        margin-top: 10vh;
+        margin-left: 20vw;
         float: left;
         padding: 2vh;
-        height: 89.9vh;
+        height: flex;
         width: 79vw;
         background-color: rgb(69, 61, 61);
 
     }
+
+
+
 
 
 .img{
@@ -42,5 +52,66 @@ body{
     margin-left: 2.5vw;
     width: 70%;
     border-radius: 50%;
+
+}
+
+.show{
+
+    margin: 2vh;
+    padding: 1.5vh;
+    float: left;
+    height: 80vh;
+    background-color: rgb(222, 230, 238);
+    z-index: 10;
+    border-radius: 5px;
+
+}
+
+.show img{
+    object-fit: cover;
+    width: 21.5vw;
+    height: 43vh;
+}
+
+
+.conf{
+
+    padding: 1vw;
+    width: 75vw;
+    height: 80vh;
+    align-items: center;
+    background-color: rgb(43, 41, 39);
+    z-index: 1000;
+    position: fixed;
+    
+
+}
+
+.ab{
+
+    display: flex;
+    padding-top: 1%;
+
+}
+
+.spcft{
+
+    margin-left: 5vw;
+    padding: 0;
+
+}
+
+.prfl{
+
+    border: 6px solid white;
+    border-radius: 5px;
+
+}
+
+.creden{
+
+    padding: 2%;
+    width: 65vw;
+    margin-left: 5vw;
 
 }

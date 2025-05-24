@@ -1,7 +1,7 @@
 
 .main{
 
-    width: 100vw;
+    width: 99vw;
     height: 100vh;
     background-color: rgb(69, 61, 61);
 
@@ -10,33 +10,53 @@
 .filtr{
 
     height: 100vh;
-    float: left;    
-    width: 20%;
-    background-color: rgb(51, 50, 50);
-    border-right: 1px solid rgb(55, 53, 53);
+    float: left;  
+    width: 19vw;
+    position: fixed;
+    background-color: rgb(29, 27, 27);
+    border-right: 1px solid rgb(43, 38, 38);
 
 }
 
 
 .main2{
 
-    height: 100vh;
+    height: flex;
     float: left;
-    width: 80%;
+    width: 80vw;
     background-color: rgb(69, 61, 61);
+    margin-left: 19vw;
 
 }
 
-    .show{
 
-        margin: 1vh;
-        padding: 1vh;
-        float: left;
-        height: 30vh;
-        width: 30%;
-        background-color: rgb(222, 230, 238);
-        z-index: 10;
-        border-radius: 1%;
+    .bann{
+
+        height: 15vh;
+        margin: 1%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        border-radius: 5px;
+
 
     }
 
+    .show{
+
+        margin: 2vh;
+        padding: 1.5vh;
+        float: left;
+        height: 80vh;
+        background-color: rgb(222, 230, 238);
+        z-index: 10;
+        border-radius: 5px;
+
+    }
+
+    .show img{
+        object-fit: cover;
+        width: 23vw;
+        height: 46vh;
+    }

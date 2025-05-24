@@ -2,6 +2,89 @@
 <?php
 
 session_start();
+require '../../Geral/Obj.php';
+
+
+$show = [];
+
+function mstringr(){
+
+$n = 0;
+
+$expo = explode(";",$_SESSION['ingressos']);
+
+$nexp = count($expo);
+
+global $show;
+
+while($nexp>$n){
+
+    $chave = $expo[$n];
+
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "test";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    $sql = "SELECT * FROM shows WHERE chave = '$chave';";
+    $result = $conn->query($sql);
+
+
+    if ($result->num_rows > 0){
+
+        while($row = $result->fetch_assoc()){
+
+            $show[] = new Show($row["nome"], $row["preco"], $row["data"], $row["local"], $row["banner"], $row["lotação"], $row["chave"]);
+
+        }
+
+
+    }
+
+    $n++;
+
+}
+
+$conn->close();
+
+
+}
+
+
+function ads(){
+
+    global $show;
+
+    $ns = count($show);
+
+    $n = 0;
+
+    while($ns>$n){
+
+        echo '<script src="cods.js"></script>';
+
+        echo '<div class="show">';
+
+        $show[$n]->exibiring();
+
+        echo '</div>';
+
+        $n++;
+
+
+    }
+
+    // $kys = array_map(fn($show) => $show->chave, show);
+    // $nrep = array_unique($kys);
+
+
+}
+
+
+
+mstringr();
+
 
 ?>
 
@@ -14,19 +97,18 @@ session_start();
 
     <title>TicketPass - Meus Ingressos</title>
 
-    <link rel="stylesheet" href="../../Geral/style.css">
+    <link rel="stylesheet" href="stlingrp.css">
     <link rel="stylesheet" href="stlingr.css">
 
 
     <script src="../../Geral/cods.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>    
 
-    
+
 </head>
 
 
 <body>
-
 
 <div class="top">
 
@@ -34,7 +116,12 @@ session_start();
 
         <div class="logo" onclick="window.location.href='../inicial/indexx.php';">
 
-            <p class="plog">TicketPass</p>
+        
+            <div class="logoi">
+
+                <p class="plog">TicketPass</p>
+
+            </div>
 
         </div>
 
@@ -98,9 +185,11 @@ session_start();
 
             <div class="ingress">
 
+            <p>seus ingressos</p>
+
             <div id="cnttt"></div>
 
-                <p>OLLLLAAAAAA</p>
+                <?php ads(); ?>
 
             </div>
 

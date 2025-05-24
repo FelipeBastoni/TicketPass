@@ -2,14 +2,12 @@
 function logon() {
 
     $("#cnttt").load("../../Geral/log.php"); // Carrega o conteúdo PHP na div
-    console.log("uau");
 }   
 
 
 function login() {
 
     $("#cnttt").load("../../Geral/session.php"); // Carrega o conteúdo PHP na div
-    console.log("uau");
 }   
 
 
@@ -19,6 +17,19 @@ function logout(){
 
 }
 
+
+function config() {
+
+    $("#cnttt").load("../../Geral/config.php"); 
+
+}   
+
+
+function gestor(){
+
+    window.location.href="../../Geral/Gestoria/gestor.php"
+
+}
 
 function verSenha(){
 
@@ -39,35 +50,13 @@ function verSenha(){
     }
     
 
-
-
-function config() {
-
-    $("#cnttt").load("../../Geral/config.php"); // Carrega o conteúdo PHP na div
-    console.log("uau");
-
-}   
     
-
-
-
-
-
 function anun(){
 
+let div1 = document.createElement('div');
+div1.classList.add('show');
+document.querySelector('#cnttt').appendChild(div1);
 
-
-    ab = document.getElementById('ct'); 
-    let divclog = document.createElement('div');
-    let divlog = document.createElement('div');
-    let div1 = document.createElement('div');
-    let ppp = document.createElement('p');
-    ppp.textContent="AAAAAAAMEMATA";
-
-    ab.appendChild(divclog);
-    divclog.appendChild(divlog);
-    divlog.appendChild(div1);
-    div1.appendChild(ppp);
 
 }
 

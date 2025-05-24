@@ -3,9 +3,113 @@
 
 session_start();
 
+if(isset($_SESSION['on'])){
+
+    $on = $_SESSION['on'];
+
+}else{
+
+    $on = "";
+
+}
+
+class Show {
+
+    public $show;
+    public $preço;
+    public $data;
+    public $local;
+    public $banner;
+    public $lotacao;
+    public $chave;
+
+    public function __construct($show, $preço, $data, $local, $banner, $lotacao, $chave){
+
+        $this->show = $show;
+        $this->preço = $preço;
+        $this->data = $data;
+        $this->local = $local;
+        $this->banner = $banner;
+        $this->lotacao = $lotacao;
+        $this->chave = $chave;
+
+    }
+
+    public function exibir() {
+    echo "<img src='$this->banner'> <br><br>
+          <p>$this->show<p>   <br>
+          <p>$this->data<p>   <br>
+          <p>R$ $this->preço<p>  <br>
+          <p>$this->local<p>  <br>";
+    }
+
+}
+
+
+$show = [];
+
+function puxarshows(){
+
+    global $show;
+
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "test";
+    
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    $sql = "SELECT * FROM shows ";
+    $result = $conn->query($sql);
+
+    
+    if ($result->num_rows > 0) {
+    
+        while($row = $result->fetch_assoc()) {
+
+            $show[] = new Show($row["nome"], $row["preco"], $row["data"], $row["local"], $row["banner"], $row["lotação"], $row["chave"]);
+
+        }  
+    }
+
+    $conn->close();
+    
+}
+
+
+function ads(){
+
+    global $show;
+
+    $ns = count($show);
+
+    $n = 0;
+
+    while($ns>$n){
+
+        echo '<script src="cods.js"></script>';
+
+        echo '<div class="show">';
+
+        $show[$n]->exibir();
+        
+        echo '<form method="POST" action="../../Geral/cmpr.php">
+                    <button name="Comprar" value="'.$show[$n]->chave.'" type="submit">Comprar Ingresso</button>
+                </form>';
+                
+        echo '</div>';
+
+        $n++;
+
+    }
+
+
+}
+
+
+
+puxarshows();
+
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -20,14 +124,12 @@ session_start();
 
     <script src="../../Geral/cods.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
    
+
 </head>
 
 
 <body>
-
-
 
 
 <div class="top">
@@ -36,7 +138,12 @@ session_start();
 
         <div class="logo" onclick="window.location.href='../inicial/indexx.php';">
 
-            <p class="plog">TicketPass</p>
+        
+            <div class="logoi">
+
+                <p class="plog">TicketPass</p>
+
+            </div>
 
         </div>
 
@@ -55,12 +162,21 @@ session_start();
         </div>
 
 
-        <div class="itms" onclick="window.location.href='../ingressos/ingr.php';">
+        <?php
+
+        if($on != ""){
+
+        echo "
+
+        <div class='itms' onclick=\"window.location.href='../ingressos/ingr.php';\">
     
-            <p class="ptop">Meus Ingressos</p>
+            <p class='ptop'>Meus Ingressos</p>
 
         </div>
 
+        ";}else{}
+
+        ?>
 
         <div class="itmlg" onclick= logon()>
 
@@ -78,160 +194,30 @@ session_start();
 
         <div class="filtr">
 
-            <p>Opppaa</p>
             <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>        
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>        
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        
-        <p>oiiiiiiiiiiiiiii</p>
+            <p>Filtros:</p>
 
         </div>
 
         <div class="main2">
 
-        <div id="cnttt"></div>
 
-
-            <div class="show">
-
-                <br>
-                <br>
-                <br>
-                
-                <form method="POST" action="../../Geral/cmpr.php">
-                <p>Algum Show</p>
-                <br>
-                
-                <input type="submit">
-
-                </form>
-
-                <br>
-                <br>                
-                <br>
-                <br>
-                <br>
-
-            </div>
-
-            <div class="show">
-
-                <br>
-                <br>
-                <br>
-                <p>Algum Show</p>
-                <br>
-                <br>
-                <br>                
-                <br>
-                <br>
-                <br>
-
-            </div>
-
-            <div class="show">
-
-                <br>
-                <br>
-                <br>
-                <p>Algum Show</p>
-                <br>
-                <br>
-                <br>                
-                <br>
-                <br>
-                <br>
+            <div class="bann">
+            
+                <p>Eventos</p>
 
             </div>
 
 
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>        
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>        
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        
-        <p>oiiiiiiiiiiiiiii</p>
+            <div id="cnttt"></div>
+
+                <?php ads();?>
+       
+            </div>
 
         </div>
 
-    </div>
-
 </div>
-
-
-
-
-
-
-
-
-
-<br>
-<p>"Cabeçalho" mais a gente sabe que é pra rebocar visualmente</p>
-<br>
 
 
 </body>

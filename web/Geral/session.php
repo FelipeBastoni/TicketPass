@@ -5,7 +5,8 @@ session_start();
 
 $email = $senha = "";
 $erroemail = $errosenha = "";
-    
+$on = "";    
+
 function test_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
@@ -57,19 +58,17 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
                 //carregar variaveis de seesão
 
-                $_SESSION["id_user"] = $row["ID"];
+                $_SESSION["id"] = $row["ID"];
                 $_SESSION["foto"] = $row["foto"];
                 $_SESSION["email"] = $row["email"];
                 $_SESSION["nome"] = $row["nome"];
                 $_SESSION["ingressos"] = $row["ingressos"];
+                $_SESSION['on'] = 1;
 
                 //redirecionar para pag de entrada segura
 
 
                 header("location: ../Abas/inicial/indexx.php");
-
-                $_SESSION['usuario'] = 'ppp';
-
 
               }
 
@@ -80,12 +79,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
             }
 
-
             $conn->close();
 
         }
 
     }
+
 
 
 ?>
@@ -126,7 +125,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <p>Faça o Login!</p>
             <br>
 
-            <form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">    
+            <form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
 
                 <input type="text" name="flogin" placeholder="Login">
         

@@ -1,5 +1,13 @@
+*{
+
+    box-sizing: border-box;
+    padding: 0; 
+    margin: 0;
+
+}
 
 .mainc{
+
     background-image: url('SAVETHEDATE.jpg');
     background-repeat: repeat;
     justify-content: center; 

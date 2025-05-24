@@ -9,13 +9,6 @@
     font-style: normal;
 }
   
-.inter-main {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: normal;
-}
-
 
 *{
 
@@ -26,6 +19,7 @@
     font-style: normal;
 
 }
+
 
 p{
 
@@ -43,10 +37,9 @@ body{
 }
 
 
-
     .top{
 
-        width: 99vw;
+        width: 100vw;
         height: 10vh;
         background-color: rgb(213, 14, 14);
         top: 0;
@@ -105,7 +98,7 @@ body{
         justify-content: center; 
         align-items: center;    
         height: 100%;    
-        width: 20%;
+        width: 50vw;
         
     }
 
@@ -155,20 +148,13 @@ body{
 
 
 
-
-    .clog{
-
-        margin-left: 25vw;
-        padding: 2%;    
-        width: 30vw;
-        align-items: center;
-        background-color: blanchedalmond;
-        z-index: 1000;
-        position: fixed;
-
+    .main{
+    
+        margin-left: 2vw;
+        margin-top: 2vh;
+        color: white;
+    
     }
-
-
 
 
 

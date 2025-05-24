@@ -1,0 +1,17 @@
+.pagini{
+
+    height: 150vh;
+    width: 99vw;
+
+}
+
+.carrossel{
+
+    height: 45vh;
+    margin: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+
+}

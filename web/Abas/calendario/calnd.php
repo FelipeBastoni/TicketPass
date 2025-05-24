@@ -3,6 +3,16 @@
 
 session_start();
 
+if(isset($_SESSION['on'])){
+
+    $on = $_SESSION['on'];
+
+}else{
+
+    $on = "";
+
+}
+
 ?>
 
 
@@ -14,12 +24,12 @@ session_start();
 
     <title>TicketPass - Calendário</title>
 
-    <link rel="stylesheet" href="stlcal.css">
     <link rel="stylesheet" href="../../Geral/style.css">
+    <link rel="stylesheet" href="stlcal.css">
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../../Geral/cods.js"></script>
-
+    
 
 </head>
 
@@ -33,7 +43,12 @@ session_start();
 
         <div class="logo" onclick="window.location.href='../inicial/indexx.php';">
 
-            <p class="plog">TicketPass</p>
+        
+            <div class="logoi">
+
+                <p class="plog" style="font-family: 'Russo One', sans-serif;">TicketPass</p>
+
+            </div>
 
         </div>
 
@@ -52,11 +67,22 @@ session_start();
         </div>
 
 
-        <div class="itms" onclick="window.location.href='../ingressos/ingr.php';">
+        <?php
+
+        if($on != ""){
+
+        echo "
+
+        <script src='../../Geral/cods.js'></script>
+        <div class='itms' onclick=\"window.location.href='../ingressos/ingr.php';\">
     
-            <p class="ptop">Meus Ingressos</p>
+            <p class='ptop'>Meus Ingressos</p>
 
         </div>
+
+        ";}else{}
+
+        ?>
 
 
         <div class="itmlg" onclick= logon()>
@@ -72,43 +98,13 @@ session_start();
 
 
 
-<div id="cnttt"></div>
+<div id="cnttt" calss="cnttt"></div>
 
 
 
 <div class="mainc">
 
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>        
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>        
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+
         <br>
         <br>
         <br>
