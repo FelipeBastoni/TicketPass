@@ -169,7 +169,7 @@ mstringr();
             <br>
             <br>
             <br>
-            <p><?php echo"".$_SESSION['email']?></p>
+            <p><?php echo"".$_SESSION['nome']?></p>
             <br>
             <p>Nivel: </p>
             <br>
