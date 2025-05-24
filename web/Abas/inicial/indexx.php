@@ -104,7 +104,7 @@ if(isset($_SESSION['on'])){
         </div>
 
 
-    <p style="color: white">Olá meu bem</p>
+    <p style="color: white">Olá tudo bem?</p>
 
                             <input type="file" class="form-control" name="inputImagem" id="inputImagem" placeholder="Escolha uma imagem" />
 
