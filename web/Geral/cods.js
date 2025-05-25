@@ -20,7 +20,7 @@ function logout(){
 
 function config() {
 
-    $("#cnttt").load("../../Geral/config.php"); 
+    $("#cnttt").load("../../Abas/ingressos/config.php"); 
 
 }   
 

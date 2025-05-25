@@ -16,7 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $sql = "UPDATE usuarios SET ingressos = CONCAT('".$_POST['Comprar'].";', ingressos) WHERE ID = ".$_SESSION['id'];
 
         $conn->query($sql);
-
         $conn->close(); 
 
         header("location: ../Abas/eventos/evnts.php");

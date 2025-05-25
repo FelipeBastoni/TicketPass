@@ -106,7 +106,7 @@ if(isset($_SESSION['on'])){
 
     <p>Olá! entt agr deu certo memo?</p>
 
-                            <input type="file" class="form-control" name="inputImagem" id="inputImagem" placeholder="Escolha uma imagem" />
+        <input type="file" class="form-control" name="inputImagem" id="inputImagem" placeholder="Escolha uma imagem" />
 
 
 
