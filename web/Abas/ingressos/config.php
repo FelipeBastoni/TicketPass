@@ -7,7 +7,7 @@ function mdft(){
 
     $nvft = $_FILES['nvfoto']; //array da entrada da ft
 
-    $pastaft = '../../uploads/'; //caminho da pasta
+    $pastaft = '../../ft_user/'; //caminho da pasta
 
     $nomeFinal = uniqid('img_', true) . '.' . pathinfo($nvft['name'], PATHINFO_EXTENSION); //criador de nome
 
