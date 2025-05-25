@@ -1,22 +1,4 @@
-<?php
 
-
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "test";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-$sql = "INSERT INTO shows (nome, preco, data, local, banner, lotação, chave) VALUES ('{$_POST['titulo']}','{$_POST['preco']}','{$_POST['data']}','{$_POST['local']}','{$_POST['banner']}','{$_POST['lotacao']}','{$_POST['chave']}')";
-
-$conn->query($sql);
-$conn->close(); 
-
-}
-
-?>
 
 <!DOCTYPE html>
 <html lang="pt-br">

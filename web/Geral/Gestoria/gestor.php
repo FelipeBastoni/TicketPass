@@ -1,3 +1,44 @@
+<?php
+
+
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "test";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+
+$nvft = $_FILES['banner']; //array da entrada da ft
+$pastaft = '../../banners/'; //caminho da pasta
+$nomeFinal = uniqid('img_', true) . '.' . pathinfo($nvft['name'], PATHINFO_EXTENSION); //criador de nome
+$caminhoCompleto = $pastaft . $nomeFinal; //endereço final (pasta+arquivo)
+move_uploaded_file($nvft["tmp_name"],$caminhoCompleto); //move o arquivo
+
+
+
+$sql = "INSERT INTO shows (nome, preco, data, local, banner, lotação, chave) VALUES ('{$_POST['titulo']}','{$_POST['preco']}','{$_POST['data']}','{$_POST['local']}','{$caminhoCompleto}','{$_POST['lotacao']}','{$_POST['chave']}')";
+
+$conn->query($sql);
+$conn->close(); 
+
+}
+
+
+
+
+
+
+
+
+
+
+
+?>
+
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -70,7 +111,7 @@
 
 <div class="main">
 
-<form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
+<form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>" enctype="multipart/form-data">
 
 <p>Coloque o Título de seu evento</p>
 <input name="titulo">
@@ -93,7 +134,7 @@
 <br>
 
 <p>Coloque o banner do seu evento</p>
-<input name="banner">
+<input type="file" name="banner">
 <br>
 <br>
 
