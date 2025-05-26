@@ -157,14 +157,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     
     
-    <p>Seu nome:</p>
-        <br>
-        <p><?php echo"".$_SESSION["nome"];?></p>
 
-        <form method="POST" name="mudarnm" action="<?php echo $_SERVER['PHP_SELF']?>">
-            <input type="text" name="nvnome" maxlength="52">
-            <input type="submit" name="mudarnm">
-        </form>
 
 
 
@@ -173,6 +166,20 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 
 <div class="creden">
+
+
+    <p>Seu nome:</p>
+    <br>
+    <p><?php echo"".$_SESSION["nome"];?></p>
+
+    <form method="POST" name="mudarnm" action="<?php echo $_SERVER['PHP_SELF']?>">
+        <input type="text" name="nvnome" maxlength="52">
+        <input type="submit" name="mudarnm">
+    </form>
+
+    <br>
+    <br>
+
 
     <p>Seu email:</p>
     <br>

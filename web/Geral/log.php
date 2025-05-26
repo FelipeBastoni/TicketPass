@@ -150,10 +150,9 @@
             <br>
             <p onclick= login()>Faça seu Log-in</p>
             <br>
-            <p onclick= logout()>Sair da sessão</p>
-            <br>
             <p onclick= gestor()>Faça seu Evento</p>
-
+            <br>
+            <p onclick= logout()>Sair da sessão</p>
 
 
         </div>
