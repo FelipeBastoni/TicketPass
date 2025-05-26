@@ -1,4 +1,58 @@
+<?php
 
+if ($_SERVER['REQUEST_METHOD'] == "POST"){
+
+    $ident = $_POST['showv'];
+    $value = $_POST['value'];
+
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "test";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    $sql = "SELECT lotação , chave FROM shows WHERE nome = '$ident';";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+       while($row = $result->fetch_assoc()){
+
+        $info[] = $row;
+
+       }
+
+
+
+
+    }
+    
+    $cnt = 1;    
+    $ok = "não";
+
+    while($cnt<$info[0]['lotação']){
+    
+        $ingress = $info[0]['chave'].$cnt;
+        $verifi = md5($ingress);
+
+            if($verifi == $value){
+
+                $ok = "ok";
+
+            }
+
+        $cnt++;
+
+    }
+
+    $conn->close();
+
+}
+
+
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -67,6 +121,18 @@
 
 
 <div class="main">
+
+
+<form name="check" method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
+    <input type="text" name="showv">
+    <input type="text" name="value">
+    <input type="submit">
+
+</form>
+
+<p><?php echo $info[0]['lotação']." " .$info[0]['chave']. " ". $ok ;?></p>
+
+
 
 </div>
 
