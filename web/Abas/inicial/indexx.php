@@ -104,7 +104,7 @@ if(isset($_SESSION['on'])){
         </div>
 
 
-    <p>Olá!</p>
+    <p class="ptxt">Olá!</p>
 
 
 

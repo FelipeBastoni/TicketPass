@@ -195,7 +195,7 @@ puxarshows();
         <div class="filtr">
 
             <br>
-            <p>Filtros:</p>
+            <p calss="ptxt">Filtros:</p>
 
         </div>
 
