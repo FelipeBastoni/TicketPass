@@ -22,8 +22,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $disp = $row['disponiveis'];
 
 
+        
+        $k1 = md5($_POST['Comprar']);
+        $k2 = md5($disp);
 
-        $key = md5($_POST['Comprar'].$disp);
+        $key = $k1.";".$k2;
+
 
 
         $sql = "UPDATE usuarios SET ingressos = CONCAT('$key;',ingressos) WHERE ID = ".$_SESSION['id'];

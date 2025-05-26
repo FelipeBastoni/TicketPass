@@ -58,10 +58,10 @@ function puxarshows(){
     $dbname = "test";
     
     $conn = new mysqli($servername, $username, $password, $dbname);
-    $sql = "SELECT * FROM shows ";
+    $sql = "SELECT * FROM shows WHERE disponiveis > 0"; #os que estão esgotados só somem... melhorar dps?
     $result = $conn->query($sql);
 
-    
+
     if ($result->num_rows > 0) {
     
         while($row = $result->fetch_assoc()) {

@@ -32,10 +32,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
     while($cnt<$info[0]['lotação']){
     
-        $ingress = $info[0]['chave'].$cnt;
-        $verifi = md5($ingress);
+        $v1 = md5($info[0]['chave']);
+        $v2 = md5($cnt);
 
-            if($verifi == $value){
+        $verific = $v1.";".$v2;
+
+            if($verific == $value){
 
                 $ok = "ok";
 
@@ -130,7 +132,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
 </form>
 
-<p><?php echo $info[0]['lotação']." " .$info[0]['chave']. " ". $ok ;?></p>
+<p><?php echo $v2." " .$v1. " ". $ok ;?></p>
 
 
 
