@@ -19,7 +19,7 @@ move_uploaded_file($nvft["tmp_name"],$caminhoCompleto); //move o arquivo
 
 
 
-$sql = "INSERT INTO shows (nome, preco, data, local, banner, lotação, chave) VALUES ('{$_POST['titulo']}','{$_POST['preco']}','{$_POST['data']}','{$_POST['local']}','{$caminhoCompleto}','{$_POST['lotacao']}','{$_POST['chave']}')";
+$sql = "INSERT INTO shows (nome, preco, data, local, banner, lotação, chave, disponiveis) VALUES ('{$_POST['titulo']}','{$_POST['preco']}','{$_POST['data']}','{$_POST['local']}','{$caminhoCompleto}','{$_POST['lotacao']}','{$_POST['chave']}','{$_POST['lotacao']}')";
 
 $conn->query($sql);
 $conn->close(); 
