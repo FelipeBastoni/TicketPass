@@ -30,6 +30,7 @@ while($nexp>$n){
     $sql = "SELECT * FROM shows WHERE chave = '$chave';";
     $result = $conn->query($sql);
 
+    #a chave está vindo em hash de chave+disponível;
 
     if ($result->num_rows > 0){
 
