@@ -171,8 +171,6 @@ mstringr();
             <br>
             <p><?php echo"".$_SESSION['nome']?></p>
             <br>
-            <p>Nivel: </p>
-            <br>
             <br>
             <p>Dar ingresso</p>
             <br>

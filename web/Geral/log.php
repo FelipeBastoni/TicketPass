@@ -1,7 +1,7 @@
 <?php
 
-    $email = $senha ="";
-    $erroemail = $errosenha = "";
+    $nome = $email = $senha ="";
+    $erronome = $erroemail = $errosenha = "";
 
 
     function logout(){
@@ -21,6 +21,16 @@
 
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
+
+        if(empty($_POST["nlogin"])){
+
+            $erronome = " is-invalid"; ##colocar dentro da classe do bootstrap/adicionar bootstrap
+
+        } else {
+
+            $nome = test_input($_POST["nlogin"]);
+
+        }
 
         if(empty($_POST["flogin"])){
 
@@ -64,8 +74,8 @@
         
             }
             
-            $sql = "INSERT INTO usuarios (email, senha)
-            VALUES ('$email', '$senhahash')";
+            $sql = "INSERT INTO usuarios (nome, email, senha, foto)
+            VALUES ('$nome','$email', '$senhahash', '../../ft_user/defaultprfl.jpg')";
         
             if ($conn->query($sql) === TRUE) {
 
@@ -114,17 +124,16 @@
     
         <div class="log1" id="prnmd">
 
-            <br>    
             <br>
             <p>Faça seu Cadastro</p>
             <br>
     
             <form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">    
     
-                <input type="text" name="flogin" placeholder="Login">
-        
+                <input type="text" name="nlogin" placeholder="Nome" maxlength="52">
                 <br>
-        
+                <input type="text" name="flogin" placeholder="E-mail">
+                <br>
                 <input id="inptsenha" type="password" name="fsn" placeholder="Senha">
                 <p class="oi" onclick= verSenha()>X</p>
         
