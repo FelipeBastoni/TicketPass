@@ -46,26 +46,52 @@ function ads(){
     $expo = explode(";",$_SESSION['ingressos']);
     $nexp = count($expo);
     #ok
-                                #dividir expo em dois arrays chave e serie talvez?
+                                
     global $show;
     $ns = count($show);    
-    $n = 0;                     #tabela de relacionamento?
-    $f = 0;
+    $n = 0;                     
+    $g = 0;
     #ok
+    #$
 
-    while($ns>$n){ # TÁ TUDO FUNCIONANDO "SÓ" FALTA FILTRAR OQ VAI APARECER e incluir a chave no ingresso
+    while($nexp>$g){
 
-        if(md5($show[$n]->chave) == $expo[$n])
+        #AAAAEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE VOLTAMO 
+                    #AGR FALTA IDENTIFICAR EM HASH 
 
-        echo '<script src="cods.js"></script>';
+        while($ns>$n){
+            
+                #while($show[]->lotação>$) {   
+                #
+                # $chavemaster = $show[$n]->chave .";". $;
+                #
+                # if($expo[$g] == md5($chavemaster))
+                #
+                #
+                #
+                #}
 
-        echo '<div class="show">';
 
-        echo $show[$n]->exibiring(); 
-        
-        echo '</div>';
+            if($expo[$g] == $show[$n]->chave){
 
-        $n++;
+
+                echo '<script src="cods.js"></script>';
+
+                echo '<div class="show">';
+
+                echo $show[$n]->exibiring(); 
+                
+                echo $expo[$g];
+
+                echo '</div>'; 
+
+            }
+
+            $n++;
+
+        }
+
+        $g++;
 
     }
 
