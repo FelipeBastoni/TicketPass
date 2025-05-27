@@ -183,7 +183,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     <p>Seu email:</p>
     <br>
-    <p><?php echo".".$_SESSION['email']?></p>
+    <p><?php echo"".$_SESSION['email']?></p>
     
     <form method="POST" name="mudarem" action="<?php echo $_SERVER['PHP_SELF']?>">
         <input type="text" name="nvemail">

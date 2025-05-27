@@ -32,8 +32,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
     while($cnt<$info[0]['lotação']){
     
-        $v1 = md5($info[0]['chave']);
-        $v2 = md5($cnt);
+        $v1 = $info[0]['chave'];
+        $v2 = $cnt;
 
         $verific = $v1.";".$v2;
 
