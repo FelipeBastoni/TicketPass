@@ -9,17 +9,8 @@ $show = [];
 
 function mstringr(){
 
-$n = 0;
 
-$expo = explode(";",$_SESSION['ingressos']);
-
-$nexp = count($expo);
-
-global $show;
-
-while($nexp>$n){
-
-    $chave = $expo[$n];
+    global $show;
 
     $servername = "localhost";
     $username = "root";
@@ -27,10 +18,9 @@ while($nexp>$n){
     $dbname = "test";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
-    $sql = "SELECT * FROM shows;";
+    $sql = "SELECT * FROM shows";
     $result = $conn->query($sql);
 
-    #a chave está vindo em hash de chave+disponível;
 
     if ($result->num_rows > 0){
 
@@ -39,53 +29,47 @@ while($nexp>$n){
             $show[] = new Show($row["nome"], $row["preco"], $row["data"], $row["local"], $row["banner"], $row["lotação"], $row["chave"]);
 
         }
-
-
+                    #puxa tds os shows
     }
 
-    $n = $n+2;
 
-}
+    $conn->close();
 
-$conn->close();
-
+    ads();
 
 }
 
 
 function ads(){
 
+    global $expo;
+    $expo = explode(";",$_SESSION['ingressos']);
+    $nexp = count($expo);
+    #ok
+                                #dividir expo em dois arrays chave e serie talvez?
     global $show;
+    $ns = count($show);    
+    $n = 0;                     #tabela de relacionamento?
+    $f = 0;
+    #ok
 
-    $ns = count($show);
+    while($ns>$n){ # TÁ TUDO FUNCIONANDO "SÓ" FALTA FILTRAR OQ VAI APARECER e incluir a chave no ingresso
 
-    $n = 0;
-
-    while($ns>$n){
+        if(md5($show[$n]->chave) == $expo[$n])
 
         echo '<script src="cods.js"></script>';
 
         echo '<div class="show">';
 
-        $show[$n]->exibiring();
-
+        echo $show[$n]->exibiring(); 
+        
         echo '</div>';
 
         $n++;
 
-
     }
 
-    // $kys = array_map(fn($show) => $show->chave, show);
-    // $nrep = array_unique($kys);
-
-
 }
-
-
-
-mstringr();
-
 
 ?>
 
@@ -188,7 +172,7 @@ mstringr();
 
             <div id="cnttt"></div>
 
-                <?php ads(); ?>
+                <?php mstringr(); ?>
 
             </div>
 
