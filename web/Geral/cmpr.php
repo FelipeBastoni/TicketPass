@@ -13,11 +13,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         $conn = new mysqli($servername, $username, $password, $dbname);
 
-        $sqlshow = "UPDATE shows SET disponiveis = disponiveis - 1 WHERE chave = '".$_POST['Comprar']."'";
+        $sqlshow = "UPDATE shows SET disponiveis = disponiveis - 1 WHERE chave = '".$_POST['Comprar']."'"; #diminui 1 ingresso
         $conn->query($sqlshow);
 
 
-        $result = $conn->query("SELECT disponiveis FROM shows WHERE chave = '$chave'");
+        $result = $conn->query("SELECT disponiveis FROM shows WHERE chave = '$chave'");  #pega o numero de ingressos disponiveis
         $row = $result->fetch_assoc();
         $disp = $row['disponiveis'];
 
@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $key = $k1.";".$k2;
 
 
-
+                                                                    #envia o ingresso comprado em hash
         $sql = "UPDATE usuarios SET ingressos = CONCAT('$key;',ingressos) WHERE ID = ".$_SESSION['id'];
         $conn->query($sql);     #faz a key do ingresso = hash da chave+ num ingresso disponivel (depois soma com os outros ingressos)
                             

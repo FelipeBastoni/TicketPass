@@ -27,7 +27,7 @@ while($nexp>$n){
     $dbname = "test";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
-    $sql = "SELECT * FROM shows WHERE chave = '$chave';";
+    $sql = "SELECT * FROM shows;";
     $result = $conn->query($sql);
 
     #a chave está vindo em hash de chave+disponível;
