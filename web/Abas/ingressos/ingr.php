@@ -52,40 +52,49 @@ function ads(){
     $n = 0;                     
     $g = 0;
     #ok
-    #$
+    global $f;
+    $f = 0;
 
-    while($nexp>$g){
 
-        #AAAAEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE VOLTAMO 
+    while($nexp>$g){ #percorre os ingressos comprados
+
+        #:( :( :( :( :( :( :( :( :( :( :( :( :(:( :( :( :( :( :( :( :( :( 
                     #AGR FALTA IDENTIFICAR EM HASH 
 
-        while($ns>$n){
+        while($ns>$n){ #percorre os shows
             
-                #while($show[]->lotação>$) {   
-                #
-                # $chavemaster = $show[$n]->chave .";". $;
-                #
-                # if($expo[$g] == md5($chavemaster))
-                #
-                #
-                #
-                #}
+            $f = 0;
 
-
-            if($expo[$g] == $show[$n]->chave){
-
-
-                echo '<script src="cods.js"></script>';
-
-                echo '<div class="show">';
-
-                echo $show[$n]->exibiring(); 
+            while($show[$n]->lotacao>$f) {   #percorre a lotação
                 
-                echo $expo[$g];
+                global $chavemaster;
+                $chavemaster = md5($show[$n]->chave) .";". md5($f);
+                
+                if($expo[$g] == $chavemaster){
+                    
+                    echo '<script src="cods.js"></script>';
 
-                echo '</div>'; 
+                    echo '<div class="show">';
+
+                    echo $show[$n]->exibiring(); 
+                        
+                    echo $expo[$g];
+
+                    echo '</div>'; 
+                
+                }
+
+                $f++;
 
             }
+
+
+    //         // if($expo[$g] == $show[$n]->chave){
+
+
+                
+
+    //         // }
 
             $n++;
 
@@ -199,6 +208,14 @@ function ads(){
             <div id="cnttt"></div>
 
                 <?php mstringr(); ?>
+            <p><?php echo $expo[0]?></p>
+            <p><?php echo $chavemaster?></p>
+            <p><?php echo md5($f)?></p>
+            <p><?php echo $show[0]->lotacao?></p>
+
+
+
+
 
             </div>
 
