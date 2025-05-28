@@ -62,6 +62,7 @@ function ads(){
             
             if($expo[$g] == md5($show[$n]->chave)){
                     
+                
 
                         echo '<script src="cods.js"></script>';
 
