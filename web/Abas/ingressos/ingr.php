@@ -62,7 +62,6 @@ function ads(){
             
             if($expo[$g] == md5($show[$n]->chave)){
                     
-                
 
                         echo '<script src="cods.js"></script>';
 
@@ -201,7 +200,7 @@ function ads(){
             <p><?php echo $expo[1]?></p>
             <p>Deduzido</p>
             <p><?php echo md5($show[0]->chave)?></p>
-            <p><?php echo md5(($show[0]->lotacao))?></p>
+            <p><?php echo md5(($show[0]->lotacao - 1))?></p>
 
             
 
