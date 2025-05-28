@@ -58,53 +58,40 @@ function ads(){
 
     while($nexp>$g){ #percorre os ingressos comprados
 
-        #:( :( :( :( :( :( :( :( :( :( :( :( :(:( :( :( :( :( :( :( :( :( 
-                    #AGR FALTA IDENTIFICAR EM HASH 
-
         while($ns>$n){ #percorre os shows
             
-            $f = 0;
-
-            while($show[$n]->lotacao>$f) {   #percorre a lotação
-                
-                global $chavemaster;
-                $chavemaster = md5($show[$n]->chave) .";". md5($f);
-                
-                if($expo[$g] == $chavemaster){
+            if($expo[$g] == md5($show[$n]->chave)){
                     
-                    echo '<script src="cods.js"></script>';
 
-                    echo '<div class="show">';
+                        echo '<script src="cods.js"></script>';
 
-                    echo $show[$n]->exibiring(); 
+                        echo '<div class="show">';
+
+                        echo $show[$n]->exibiring(); 
                         
-                    echo $expo[$g];
+                        echo $expo[$g];
 
-                    echo '</div>'; 
+                        echo '</div>'; 
                 
-                }
-
-                $f++;
-
             }
 
-
-    //         // if($expo[$g] == $show[$n]->chave){
-
-
-                
-
-    //         // }
-
-            $n++;
+        $n++;
 
         }
 
-        $g++;
+    $g++;
 
     }
 
+
 }
+
+
+
+
+
+
+
 
 ?>
 
@@ -208,10 +195,15 @@ function ads(){
             <div id="cnttt"></div>
 
                 <?php mstringr(); ?>
+            <p>recebido do cliente</p>
             <p><?php echo $expo[0]?></p>
-            <p><?php echo $chavemaster?></p>
-            <p><?php echo md5($f)?></p>
-            <p><?php echo $show[0]->lotacao?></p>
+            <p><?php echo $expo[1]?></p>
+            <p>Deduzido</p>
+            <p><?php echo md5($show[0]->chave)?></p>
+            <p><?php echo md5(($show[0]->lotacao))?></p>
+
+            
+
 
 
 
