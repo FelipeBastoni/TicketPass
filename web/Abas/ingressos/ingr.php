@@ -52,34 +52,30 @@ function ads(){
     $n = 0;                     
     $g = 0;
     #ok
-    global $f;
-    $f = 0;
 
+    echo '<script src="cods.js"></script>';
 
-    while($nexp>$g){ #percorre os ingressos comprados
+    for($g = 0; $g < $nexp; $g++){ #percorre os ingressos comprados
 
-        while($ns>$n){ #percorre os shows
+        for($n = 0; $n < $ns; $n++){ #percorre os shows
             
             if($expo[$g] == md5($show[$n]->chave)){
                     
+                echo '<script src="cods.js"></script>';
 
-                        echo '<script src="cods.js"></script>';
+                echo '<div class="show">';
 
-                        echo '<div class="show">';
-
-                        echo $show[$n]->exibiring(); 
+                echo $show[$n]->exibiring(); 
                         
-                        echo $expo[$g];
+                echo $expo[$g];
 
-                        echo '</div>'; 
+                echo '</div>'; 
                 
             }
 
-        $n++;
 
         }
 
-    $g++;
 
     }
 
@@ -192,9 +188,13 @@ function ads(){
 
             <p>seus ingressos</p>
 
-            <div id="cnttt"></div>
+            <div id="cnttt">
 
                 <?php mstringr(); ?>
+
+
+            </div>
+
             <p>recebido do cliente</p>
             <p><?php echo $expo[0]?></p>
             <p><?php echo $expo[1]?></p>
