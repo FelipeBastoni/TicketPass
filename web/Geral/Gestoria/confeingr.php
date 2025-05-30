@@ -1,3 +1,4 @@
+
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] == "POST"){
@@ -22,30 +23,39 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
        }
 
-
-
-
     }
     
-    $cnt = 1;    
+
+
+
+
+    global $ok;
+    global $v1;
+  
     $ok = "não";
+    $v1 = md5($info[0]['chave']);
+    $i = 0;
+   
 
-    while($cnt<$info[0]['lotação']){
-    
-        $v1 = $info[0]['chave'];
-        $v2 = $cnt;
 
-        $verific = $v1.";".$v2;
 
-            if($verific == $value){
+    while($i < $info[0]['lotação']){
 
-                $ok = "ok";
+        $verific = $v1.";".md5($i);
 
-            }
+        if($verific == $value){
 
-        $cnt++;
+            $ok = "Beleza";
+
+        }
+
+        $i++;
 
     }
+
+
+
+
 
     $conn->close();
 
@@ -132,7 +142,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
 </form>
 
-<p><?php echo $v2." " .$v1. " ". $ok ;?></p>
+<p><?php echo $ok;?></p>
+<br>
+
+
 
 
 
