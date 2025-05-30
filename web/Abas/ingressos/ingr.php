@@ -196,27 +196,13 @@ function ads(){
 
             <p>seus ingressos</p>
 
-            <div id="cnttt">
+                <div id="cnttt">
 
-                <?php mstringr(); ?>
+                    <?php mstringr(); ?>
 
+                </div>
 
-            </div>
-
-            <p>recebido do cliente</p>
-            <p><?php echo $expo[0]?></p>
-            <p><?php echo $expo[1]?></p>
-            <p>Deduzido</p>
-            <p><?php echo md5($show[0]->chave)?></p>
-            <p><?php echo md5($f)?></p>
-
-            
-
-
-
-
-
-
+        
             </div>
 
     </div>
