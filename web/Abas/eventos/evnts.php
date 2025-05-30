@@ -1,6 +1,7 @@
 
 <?php
 
+require '../../Geral/Obj.php';
 session_start();
 
 if(isset($_SESSION['on'])){
@@ -13,37 +14,6 @@ if(isset($_SESSION['on'])){
 
 }
 
-class Show {
-
-    public $show;
-    public $preço;
-    public $data;
-    public $local;
-    public $banner;
-    public $lotacao;
-    public $chave;
-
-    public function __construct($show, $preço, $data, $local, $banner, $lotacao, $chave){
-
-        $this->show = $show;
-        $this->preço = $preço;
-        $this->data = $data;
-        $this->local = $local;
-        $this->banner = $banner;
-        $this->lotacao = $lotacao;
-        $this->chave = $chave;
-
-    }
-
-    public function exibir() {
-    echo "<img src='$this->banner'> <br><br>
-          <p>$this->show<p>   <br>
-          <p>$this->data<p>   <br>
-          <p>R$ $this->preço<p>  <br>
-          <p>$this->local<p>  <br>";
-    }
-
-}
 
 
 $show = [];
@@ -58,7 +28,7 @@ function puxarshows(){
     $dbname = "test";
     
     $conn = new mysqli($servername, $username, $password, $dbname);
-    $sql = "SELECT * FROM shows WHERE disponiveis > 0"; #os que estão esgotados só somem... melhorar dps?
+    $sql = "SELECT * FROM shows"; #os que estão esgotados só somem... melhorar dps?
     $result = $conn->query($sql);
 
 
@@ -66,7 +36,7 @@ function puxarshows(){
     
         while($row = $result->fetch_assoc()) {
 
-            $show[] = new Show($row["nome"], $row["preco"], $row["data"], $row["local"], $row["banner"], $row["lotação"], $row["chave"]);
+            $show[] = new Show($row["nome"], $row["preco"], $row["data"], $row["local"], $row["banner"], $row["lotação"], $row["chave"], $row["disponiveis"]);
 
         }  
     }
@@ -84,9 +54,9 @@ function ads(){
 
     $n = 0;
 
-    while($ns>$n){
+    echo '<script src="cods.js"></script>';
 
-        echo '<script src="cods.js"></script>';
+    while($ns>$n){
 
         echo '<div class="show">';
 

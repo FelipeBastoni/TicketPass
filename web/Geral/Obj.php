@@ -9,8 +9,9 @@ public $local;
 public $banner;
 public $lotacao;
 public $chave;
+public $disponiveis;
 
-public function __construct($show, $preço, $data, $local, $banner, $lotacao, $chave){
+public function __construct($show, $preço, $data, $local, $banner, $lotacao, $chave, $disponiveis){
 
     $this->show = $show;
     $this->preço = $preço;
@@ -19,6 +20,7 @@ public function __construct($show, $preço, $data, $local, $banner, $lotacao, $c
     $this->banner = $banner;
     $this->lotacao = $lotacao;
     $this->chave = $chave;
+    $this->disponiveis = $disponiveis;
 
 }
 
@@ -28,6 +30,18 @@ echo "<img width='350vw' src='$this->banner'> <br><br>
       <p>$this->data</p>   <br>
       <p>R$ $this->preço</p>  <br>
       <p>$this->local</p>  <br>";
+
+if($this->disponiveis > 0){
+
+echo "<p>$this->disponiveis</p>  <br>";
+
+}else{
+
+echo "<p>Ingressos Esgotados";
+
+}
+
+
 }
 
 
