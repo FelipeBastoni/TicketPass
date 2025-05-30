@@ -74,14 +74,14 @@ if(isset($_SESSION['on'])){
         echo "
 
         <script src='../../Geral/cods.js'></script>
-        <div class='itms' onclick=\"window.location.href='../ingressos/ingr.php';\">
+            <div class='itms' onclick=\"window.location.href='../ingressos/ingr.php';\">
     
-            <p class='ptop'>Meus Ingressos</p>
+                <p class='ptop'>Meus Ingressos</p>
 
-        </div>
+            </div>
 
-        ";}else{}
-
+        ";}
+        
         ?>
 
 
@@ -90,34 +90,20 @@ if(isset($_SESSION['on'])){
             <p type="button" class="ptop">Log-up</p>
 
         </div>
-
         
     </div>
 
 </div>
 
 
-
 <div id="cnttt" calss="cnttt"></div>
 
 
+    <div class="mainc">
 
-<div class="mainc">
+        <iframe src="https://calendar.google.com/calendar/embed?src=58cfa85bbef55fad7cfd17267cdbd67cb67f22acfd3b30e83f6490181e4b6428%40group.calendar.google.com&ctz=America%2FSao_Paulo" style="border: 0" width="1200" height="500" frameborder="0" scrolling="no"></iframe>
 
-
-        <br>
-        <br>
-        <br>
-        <br>
-        
-        <p>oiiiiiiiiiiiiiii</p>
-
-
-</div>
-
-
-
-
+    </div>
 
 
 </body>

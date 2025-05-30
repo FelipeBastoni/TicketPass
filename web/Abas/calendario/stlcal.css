@@ -8,6 +8,8 @@
 
 .mainc{
 
+    width: 99vw;
+    height: 91vh;
     background-image: url('SAVETHEDATE.jpg');
     background-repeat: repeat;
     justify-content: center; 

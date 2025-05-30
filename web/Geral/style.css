@@ -40,7 +40,6 @@ p{
     font-weight: 550;
     color: white;
 
-
 }
 
 
@@ -77,6 +76,7 @@ body{
 
     }
 
+
     .logo{
 
         flex: 1;
@@ -92,16 +92,15 @@ body{
 
         .logoi{
 
-
-        flex: 1;
-        display: flex;
-        justify-content: left; 
-        align-items: center; 
-        width: 20%;
-        height: 100%;
-        clip-path: polygon(0 0, 100% 0%, 70% 100%, 0% 100%);
-        background-color: black;
-        color: white;
+            flex: 1;
+            display: flex;
+            justify-content: left; 
+            align-items: center; 
+            width: 20%;
+            height: 100%;
+            clip-path: polygon(0 0, 100% 0%, 70% 100%, 0% 100%);
+            background-color: black;
+            color: white;
 
         }
 
@@ -174,9 +173,5 @@ body{
         position: fixed;
 
     }
-
-
-
-
 
   

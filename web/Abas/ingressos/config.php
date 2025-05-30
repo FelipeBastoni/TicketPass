@@ -33,8 +33,6 @@ function mdft(){
 
     header("location: ingr.php");
 
-
-
 }
 
 
@@ -132,83 +130,72 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 <div id="conf" class="conf">
 
-<p onclick="document.getElementById('conf').style.display='none'">X</p>
+    <p onclick="document.getElementById('conf').style.display='none'">X</p>
 
 
-<div class="ab">
+    <div class="ab">
 
 
+        <div class="spcft">
+            <!-- lado esquerdo -->
 
-<div class="spcft">
+            <img class="prfl" src="<?php echo $_SESSION['foto'];?>" width="300">
 
-    <img class="prfl" src="<?php echo $_SESSION['foto'];?>" width="300">
-
-        <br>
-        <br>    
-
-        <form method="POST" name="mudarft" action="<?php echo $_SERVER['PHP_SELF'];?>" enctype="multipart/form-data">
-            
-            <input type="file" name="nvfoto" placeholder="Escolha uma imagem" />
             <br>
+            <br>    
+
+            <form method="POST" name="mudarft" action="<?php echo $_SERVER['PHP_SELF'];?>" enctype="multipart/form-data">
             
-            <input type="submit" name="mudarft">
+                <input type="file" name="nvfoto" placeholder="Escolha uma imagem" />
+                <br>
+            
+                <input type="submit" name="mudarft">
 
-        </form>
+            </form>
 
+
+        </div>
+
+
+
+        <div class="creden">
+            <!-- lado direito -->
+
+            <p>Seu nome:</p>
+            <br>
+            <p><?php echo"".$_SESSION["nome"];?></p>
+
+            <form method="POST" name="mudarnm" action="<?php echo $_SERVER['PHP_SELF']?>">
+                <input type="text" name="nvnome" maxlength="52">
+                <input type="submit" name="mudarnm">
+            </form>
+
+            <br>
+            <br>
+
+
+            <p>Seu email:</p>
+            <br>
+            <p><?php echo"".$_SESSION['email']?></p>
     
+            <form method="POST" name="mudarem" action="<?php echo $_SERVER['PHP_SELF']?>">
+                <input type="text" name="nvemail">
+                <input type="submit" name="mudarem">
+            </form>
+
+            <br>
+            <br>
+
+            <p>Mudar sua senha</p>
     
 
+        </div>
 
-
+    </div>
 
 </div>
 
 
 
-<div class="creden">
-
-
-    <p>Seu nome:</p>
-    <br>
-    <p><?php echo"".$_SESSION["nome"];?></p>
-
-    <form method="POST" name="mudarnm" action="<?php echo $_SERVER['PHP_SELF']?>">
-        <input type="text" name="nvnome" maxlength="52">
-        <input type="submit" name="mudarnm">
-    </form>
-
-    <br>
-    <br>
-
-
-    <p>Seu email:</p>
-    <br>
-    <p><?php echo"".$_SESSION['email']?></p>
-    
-    <form method="POST" name="mudarem" action="<?php echo $_SERVER['PHP_SELF']?>">
-        <input type="text" name="nvemail">
-        <input type="submit" name="mudarem">
-    </form>
-
-    <br>
-    <br>
-
-
-
-    <p>Mudar sua senha</p>
-
-    
-
-
-
-
-
-</div>
-
-
-
-</div>
-
-</div>
 
 </body>

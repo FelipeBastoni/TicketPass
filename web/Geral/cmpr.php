@@ -12,7 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $dbname = "test";
 
         $conn = new mysqli($servername, $username, $password, $dbname);
-
         $sqlshow = "UPDATE shows SET disponiveis = disponiveis - 1 WHERE chave = '".$_POST['Comprar']."'"; #diminui 1 ingresso
         $conn->query($sqlshow);
 
@@ -33,12 +32,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $sql = "UPDATE usuarios SET ingressos = CONCAT('$key;',ingressos) WHERE ID = ".$_SESSION['id'];
         $conn->query($sql);     #faz a key do ingresso = hash da chave+ num ingresso disponivel (depois soma com os outros ingressos)
                             
-        
-
         $conn->close(); 
 
+        
         header("location: ../Abas/eventos/evnts.php");
-
 
     }
 

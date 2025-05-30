@@ -39,7 +39,7 @@ function verSenha(){
         if (camposenha.type == "password"){
             camposenha.type = "text";
     
-    
+
         } else {
     
             camposenha.type = "password"
@@ -49,14 +49,12 @@ function verSenha(){
     
     }
     
-
     
 function anun(){
 
-let div1 = document.createElement('div');
-div1.classList.add('show');
-document.querySelector('#cnttt').appendChild(div1);
-
+    let div1 = document.createElement('div');
+    div1.classList.add('show');
+    document.querySelector('#cnttt').appendChild(div1);
 
 }
 

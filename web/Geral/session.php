@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $result = $conn->query($sql);
             
             if ($result->num_rows > 0) {
-              // output data of each row
+
               while($row = $result->fetch_assoc()) {
 
                 //carregar variaveis de seesão
@@ -65,17 +65,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 $_SESSION["ingressos"] = $row["ingressos"];
                 $_SESSION['on'] = 1;
 
-                //redirecionar para pag de entrada segura
-
+                //redirecionar para pag de entrada
 
                 header("location: ../Abas/inicial/indexx.php");
 
               }
 
-              
+
             } else {
             
-                echo "tá errado otário";
+                echo "tá errado otário"; #tem que melhorar issoa aq
 
             }
 
@@ -84,7 +83,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         }
 
     }
-
 
 
 ?>
@@ -99,11 +97,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <title>Document</title>
 
 
-
 </head>
+
+
+
 <body>
     
-
 
 
 <div class="clog" id="mod">
@@ -128,9 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
 
                 <input type="text" name="flogin" placeholder="Login">
-        
-                <br>
-        
+                <br>    
                 <input id="inptsenha" type="password" name="fsn" placeholder="Senha">
                 <input type="submit" name="nemail" onclick = modaln()>
 
@@ -139,7 +136,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         </div>
 
     </div>
+
 </div>
     
 </body>
+
+
 </html>

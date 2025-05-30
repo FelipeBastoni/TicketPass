@@ -18,15 +18,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     if ($result->num_rows > 0) {
        while($row = $result->fetch_assoc()){
 
-        $info[] = $row;
+            $info[] = $row;
 
-       }
-
-
-
+        }
 
     }
     
+
+
     $cnt = 1;    
     $ok = "não";
 
@@ -52,19 +51,17 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 }
 
 
-
-
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
-
 
 <head>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>TicketPass - Aba do Gestor</title>
 
     <link rel="stylesheet" href="styleg.css">
@@ -72,11 +69,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../../Geral/cods.js"></script>
 
-        
 
 </head>
 
+
+
 <body>
+
 
 
 <div class="top">
@@ -124,21 +123,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
 <div class="main">
 
+    <form name="check" method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
+        <input type="text" name="showv">
+        <input type="text" name="value">
+        <input type="submit">
 
-<form name="check" method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
-    <input type="text" name="showv">
-    <input type="text" name="value">
-    <input type="submit">
+    </form>
 
-</form>
-
-<p><?php echo $v2." " .$v1. " ". $ok ;?></p>
-
-
+    <p><?php echo $v2." " .$v1. " ". $ok ;?></p>
 
 </div>
-
-
 
 
 

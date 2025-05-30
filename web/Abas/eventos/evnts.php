@@ -28,7 +28,7 @@ function puxarshows(){
     $dbname = "test";
     
     $conn = new mysqli($servername, $username, $password, $dbname);
-    $sql = "SELECT * FROM shows"; #os que estão esgotados só somem... melhorar dps?
+    $sql = "SELECT * FROM shows"; 
     $result = $conn->query($sql);
 
 
@@ -60,26 +60,21 @@ function ads(){
 
         echo '<div class="show">';
 
-        $show[$n]->exibir();
-        
-        // echo '<form method="POST" action="../../Geral/cmpr.php">
-        //             <button name="Comprar" value="'.$show[$n]->chave.'" type="submit">Comprar Ingresso</button>
-        //         </form>';
-                
+            $show[$n]->exibir();
+                        
         echo '</div>';
 
         $n++;
 
     }
 
-
 }
-
 
 
 puxarshows();
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -95,7 +90,6 @@ puxarshows();
     <script src="../../Geral/cods.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
    
-
 </head>
 
 
@@ -144,7 +138,7 @@ puxarshows();
 
         </div>
 
-        ";}else{}
+        ";}
 
         ?>
 
@@ -187,7 +181,7 @@ puxarshows();
 
         </div>
 
-</div>
+    </div>
 
 
 </body>

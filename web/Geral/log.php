@@ -63,7 +63,6 @@
             $password = "";
             $dbname = "test";
 
-
             $conn = new mysqli($servername, $username, $password, $dbname);
             $senhahash = md5($senha);  #transformando senha em hash
 
@@ -105,8 +104,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
+
+
 <body>
-    
 
 
 
@@ -135,10 +136,8 @@
                 <input type="text" name="flogin" placeholder="E-mail">
                 <br>
                 <input id="inptsenha" type="password" name="fsn" placeholder="Senha">
-                <p class="oi" onclick= verSenha()>X</p>
-        
+                <p class="oi" onclick= verSenha()>X</p>        
                 <br>
-        
                 <input type="submit">
         
             </form>
@@ -158,7 +157,11 @@
         </div>
 
     </div>
-    </div>
-    
+
+</div>
+
+
 </body>
+
+
 </html>

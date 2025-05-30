@@ -9,7 +9,6 @@ $show = [];
 
 function mstringr(){
 
-
     global $show;
 
     $servername = "localhost";
@@ -29,7 +28,7 @@ function mstringr(){
             $show[] = new Show($row["nome"], $row["preco"], $row["data"], $row["local"], $row["banner"], $row["lotação"], $row["chave"],"");
 
         }
-                    #puxa tds os shows
+
     }
 
 
@@ -67,7 +66,6 @@ function ads(){
 
                     if($expo[$g+1] == md5($f)){
 
-
                         echo '<script src="cods.js"></script>';
 
                         echo '<div class="show">';
@@ -93,11 +91,6 @@ function ads(){
 
 
 
-
-
-
-
-
 ?>
 
 
@@ -120,7 +113,10 @@ function ads(){
 </head>
 
 
+
 <body>
+
+
 
 <div class="top">
 
@@ -172,41 +168,44 @@ function ads(){
 
     
 
-    <div class="centr">
+<div class="centr">
 
-        <div class="maining">
+    <div class="maining">
 
-            <br>
-            <img class="img" src="<?php echo $_SESSION['foto'];?>">
-            <br>
-            <br>
-            <br>
-            <p><?php echo"".$_SESSION['nome']?></p>
-            <br>
-            <br>
-            <p>Dar ingresso</p>
-            <br>
-            <br>
-            <br>
-            <br>
-            <p onclick= config()>Configurações</p>
+        <br>
+        <img class="img" src="<?php echo $_SESSION['foto'];?>">
+        <br>
+        <br>
+        <br>
+        <p><?php echo"".$_SESSION['nome']?></p>
+        <br>
+        <br>
+        <p>Dar ingresso</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p onclick= config()>Configurações</p>
 
-        </div>
+    </div>
 
-            <div class="ingress">
+        <div class="ingress">
 
             <p>seus ingressos</p>
 
-                <div id="cnttt">
+            <div id="cnttt">
 
-                    <?php mstringr(); ?>
+                <?php mstringr(); ?>
 
-                </div>
-
-        
             </div>
 
+    
+        </div>
+
     </div>
+
+</div>
+
 
 
 

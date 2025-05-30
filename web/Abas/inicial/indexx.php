@@ -16,7 +16,6 @@ if(isset($_SESSION['on'])){
 ?>
 
     
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -73,15 +72,15 @@ if(isset($_SESSION['on'])){
 
         if($on != ""){
 
-        echo "
+            echo "
 
-        <div class='itms' onclick=\"window.location.href='../ingressos/ingr.php';\">
+            <div class='itms' onclick=\"window.location.href='../ingressos/ingr.php';\">
     
-            <p class='ptop'>Meus Ingressos</p>
+                <p class='ptop'>Meus Ingressos</p>
 
-        </div>
+            </div>
 
-        ";}else{}
+        ";}
 
         ?>
 
@@ -91,24 +90,21 @@ if(isset($_SESSION['on'])){
 
         </div>
 
-        
     </div>
 
 </div>
 
 <div id="cnttt"></div>
 
+
 <div class="pagini">
     
-    <div class="carrossel">
-        </div>
-
+    <div class="carrossel"></div>
 
     <p class="ptxt">Olá!</p>
 
-
-
-
 </div>
+
+
 
 </html>
