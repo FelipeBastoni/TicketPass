@@ -26,7 +26,7 @@ function mstringr(){
 
         while($row = $result->fetch_assoc()){
 
-            $show[] = new Show($row["nome"], $row["preco"], $row["data"], $row["local"], $row["banner"], $row["lotação"], $row["chave"]);
+            $show[] = new Show($row["nome"], $row["preco"], $row["data"], $row["local"], $row["banner"], $row["lotação"], $row["chave"],"");
 
         }
                     #puxa tds os shows
@@ -53,6 +53,8 @@ function ads(){
     $g = 0;
     #ok
 
+    global $f;
+
     echo '<script src="cods.js"></script>';
 
     for($g = 0; $g < $nexp; $g++){ #percorre os ingressos comprados
@@ -61,24 +63,30 @@ function ads(){
             
             if($expo[$g] == md5($show[$n]->chave)){
                     
-                echo '<script src="cods.js"></script>';
+                for($f = 0; $f < $show[$n]->lotacao; $f++){
 
-                echo '<div class="show">';
+                    if($expo[$g+1] == md5($f)){
 
-                echo $show[$n]->exibiring(); 
+
+                        echo '<script src="cods.js"></script>';
+
+                        echo '<div class="show">';
+
+                        echo $show[$n]->exibiring(); 
                         
-                echo $expo[$g];
+                        echo $expo[$g].";". $expo[$g+1];
 
-                echo '</div>'; 
+                        echo '</div>'; 
+
+                    }
                 
-            }
+                }
 
+            }
 
         }
 
-
     }
-
 
 }
 
@@ -200,7 +208,7 @@ function ads(){
             <p><?php echo $expo[1]?></p>
             <p>Deduzido</p>
             <p><?php echo md5($show[0]->chave)?></p>
-            <p><?php echo md5(($show[0]->lotacao - 1))?></p>
+            <p><?php echo md5($f)?></p>
 
             
 

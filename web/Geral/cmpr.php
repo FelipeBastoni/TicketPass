@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $conn->query($sqlshow);
 
 
-        $result = $conn->query("SELECT disponiveis FROM shows WHERE chave = '$chave'");  #pega o numero de ingressos disponiveis
+        $result = $conn->query("SELECT disponiveis FROM shows WHERE chave = '".$_POST['Comprar']."'");  #pega o numero de ingressos disponiveis
         $row = $result->fetch_assoc();
         $disp = $row['disponiveis'];
 
