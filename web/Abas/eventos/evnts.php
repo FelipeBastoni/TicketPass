@@ -62,9 +62,9 @@ function ads(){
 
         $show[$n]->exibir();
         
-        echo '<form method="POST" action="../../Geral/cmpr.php">
-                    <button name="Comprar" value="'.$show[$n]->chave.'" type="submit">Comprar Ingresso</button>
-                </form>';
+        // echo '<form method="POST" action="../../Geral/cmpr.php">
+        //             <button name="Comprar" value="'.$show[$n]->chave.'" type="submit">Comprar Ingresso</button>
+        //         </form>';
                 
         echo '</div>';
 

@@ -27,13 +27,24 @@ public function __construct($show, $preço, $data, $local, $banner, $lotacao, $c
 public function exibir() {
 echo "<img width='350vw' src='$this->banner'> <br><br>
       <p>$this->show</p>   <br>
-      <p>$this->data</p>   <br>
-      <p>R$ $this->preço</p>  <br>
-      <p>$this->local</p>  <br>";
+        <p>$this->local  -  $this->data</p>  
+        <br>
+      ";
 
 if($this->disponiveis > 0){
 
-echo "<p>$this->disponiveis</p>  <br>";
+
+echo "<p>Ingressos Disponíveis: $this->disponiveis</p>
+      <br>
+      <p>Preço: R$$this->preço</p>
+      <br>
+      <form method='POST' action='../../Geral/cmpr.php'>
+        
+          <button name='Comprar' value='$this->chave' type='submit'>Comprar Ingresso</button>
+      
+      </form>
+    
+";
 
 }else{
 

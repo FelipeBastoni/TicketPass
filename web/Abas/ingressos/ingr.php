@@ -74,7 +74,8 @@ function ads(){
 
                         echo $show[$n]->exibiring(); 
                         
-                        echo $expo[$g].";". $expo[$g+1];
+                        #código de barra do ingresso na aba de ingressos
+                        #echo "<p>".$expo[$g].";".$expo[$g+1]."</p>";
 
                         echo '</div>'; 
 
