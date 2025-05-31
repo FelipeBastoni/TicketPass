@@ -73,7 +73,27 @@ function ads(){
                         echo $show[$n]->exibiring(); 
                         
                         #código de barra do ingresso na aba de ingressos
+
+                        $qr= $expo[$g].";".$expo[$g+1];
+
                         #echo "<p>".$expo[$g].";".$expo[$g+1]."</p>";
+                        
+                        echo "<div style='text-align: center;'>";
+
+                        echo "<br>";
+
+                        echo "
+                        
+                        <form method='POST' action='grnd.php'>
+                        
+                        <button type='submit' name='QR' value='$qr'>Mostrar Ingresso</button>
+                        
+                        </form>
+                        
+                        ";
+                        #echo "<img style='width:130px; height:130px;' src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$qr' alt='QR Code' />";
+
+                        echo "</div>";
 
                         echo '</div>'; 
 

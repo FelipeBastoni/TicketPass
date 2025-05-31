@@ -48,13 +48,9 @@ class Show {
                     <p>Preço: R$$this->preço</p>
                     <br>
 
-                    <button onclick='cmp()'>Teste</button> 
-
-                    <!-- talvez vai ser mais fácil executar a função do JS aqui para ele gerar aq e ficar td aq  -->
-
-                    <form method='POST' action='../../Geral/cmpr.php'>
+                    <form method='POST' action='cmpr.php'>
                     
-                        <button name='Comprar' id='show' value='$this->chave' type='submit'>Comprar Ingresso</button>
+                        <button name='Comprar' value='$this->chave' type='submit'>Comprar Ingresso</button>
                 
                     </form>
                 
