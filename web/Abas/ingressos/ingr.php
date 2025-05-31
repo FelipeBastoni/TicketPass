@@ -213,16 +213,11 @@ function ads(){
 
             <p>seus ingressos</p>
 
-            <div id="cnttt">
+            <?php mstringr(); ?>
 
-                <?php mstringr(); ?>
-
-            </div>
-
+            <div id="cnttt"></div>
     
         </div>
-
-    </div>
 
 </div>
 
