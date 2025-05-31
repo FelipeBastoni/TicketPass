@@ -211,7 +211,7 @@ function ads(){
 
         <div class="ingress">
 
-            <p>seus ingressos</p>
+            <p>Seus Ingressos:</p>
 
             <?php mstringr(); ?>
 
