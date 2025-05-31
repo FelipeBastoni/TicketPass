@@ -9,7 +9,24 @@
 
 $qr = $_POST['QR'];
 
-echo "<img style='width:200px; height:200px;' src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$qr' alt='QR Code' />";
+
+echo "<script>
+
+function cp(){
+
+    const text = '$qr';
+    navigator.clipboard.writeText(text).then(() => { alert('Código Copiado!');
+});
+
+}
+
+</script>
+
+
+";
+
+
+echo "<img onclick='cp()' style='width:200px; height:200px;' src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$qr' alt='QR Code' />";
 
 ?>
 
