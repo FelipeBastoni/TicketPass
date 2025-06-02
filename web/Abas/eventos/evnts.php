@@ -319,13 +319,13 @@ if(isset($_POST['Orddisp2'])){
             </form>
             <br>
 
-            <p>Mais Ingressos Disponíveis:</p>
+            <p>Mais Disponíveis:</p>
             <form method="POST" name="Orddisp1" action="<?php echo $_SERVER['PHP_SELF'];?>">
                 <input type="submit" name="Orddisp1">
             </form>
             <br>
 
-            <p>Menos Ingressos Disponíveis:</p>
+            <p>Menos Disponíveis:</p>
             <form method="POST" name="Orddisp2" action="<?php echo $_SERVER['PHP_SELF'];?>">
                 <input type="submit" name="Orddisp2">
             </form>
