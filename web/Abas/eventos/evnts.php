@@ -15,7 +15,6 @@ if(isset($_SESSION['on'])){
 }
 
 
-
 $show = [];
 
 function puxarshows(){
@@ -43,6 +42,74 @@ function puxarshows(){
 
     $conn->close();
     
+
+    
+    $url = $_SERVER['REQUEST_URI'];
+    
+    if(strpos($url, 'var=alfa')){
+
+        usort($show, function($a, $b) {
+    return strcmp($a->show, $b->show);
+    });
+
+    }
+
+    if(strpos($url, 'var=cost1')){
+
+        usort($show, function($a, $b) {
+    return $a->preço <=> $b->preço;
+    });
+
+    }
+
+    if(strpos($url, 'var=cost2')){
+
+        usort($show, function($a, $b) {
+    return $b->preço <=> $a->preço;
+    });
+
+    }
+
+    if(strpos($url, 'var=date1')){
+
+        usort($show, function($a, $b) {
+            $dateA = DateTime::createFromFormat('d/m/Y', $a->data);
+            $dateB = DateTime::createFromFormat('d/m/Y', $b->data);
+
+    return $dateA <=> $dateB;
+    });
+
+    }
+
+    if(strpos($url, 'var=date2')){
+
+        usort($show, function($a, $b) {
+            $dateA = DateTime::createFromFormat('d/m/Y', $a->data);
+            $dateB = DateTime::createFromFormat('d/m/Y', $b->data);
+
+    return $dateB <=> $dateA;
+    });
+
+    }
+
+    if(strpos($url, 'var=ingr1')){
+
+        usort($show, function($a, $b) {
+    return $b->disponiveis <=> $a->disponiveis;
+    });
+
+    }
+
+    if(strpos($url, 'var=ingr2')){
+
+        usort($show, function($a, $b) {
+    return $a->disponiveis <=> $b->disponiveis;
+    });
+
+    }
+
+
+
 }
 
 
@@ -72,6 +139,66 @@ function ads(){
 
 
 puxarshows();
+
+
+
+if(isset($_POST['Ordalf'])){
+
+    $var = "alfa";
+        header("Location: evnts.php?var=$var");
+        exit;
+
+}
+
+
+if(isset($_POST['Ordcus'])){
+
+    $var = "cost1";
+        header("Location: evnts.php?var=$var");
+        exit;
+
+}
+
+if(isset($_POST['Ordcusma'])){
+
+    $var = "cost2";
+        header("Location: evnts.php?var=$var");
+        exit;
+
+}
+
+if(isset($_POST['Orddate1'])){
+
+    $var = "date1";
+        header("Location: evnts.php?var=$var");
+        exit;
+
+}
+
+if(isset($_POST['Orddate2'])){
+
+    $var = "date2";
+        header("Location: evnts.php?var=$var");
+        exit;
+
+}
+
+if(isset($_POST['Orddisp1'])){
+
+    $var = "ingr1";
+        header("Location: evnts.php?var=$var");
+        exit;
+
+}
+
+if(isset($_POST['Orddisp2'])){
+
+    $var = "ingr2";
+        header("Location: evnts.php?var=$var");
+        exit;
+
+}
+
 
 ?>
 
@@ -160,6 +287,51 @@ puxarshows();
 
             <br>
             <p calss="ptxt">Filtros:</p>
+            <br>
+            <p>Alfabeticamente:</p>
+            <form method="POST" name="Ordalf" action="<?php echo $_SERVER['PHP_SELF'];?>">
+                <input type="submit" name="Ordalf">
+            </form>
+            <br>
+
+            <p>Menor Preço:</p>
+            <form method="POST" name="Ordcus" action="<?php echo $_SERVER['PHP_SELF'];?>">
+                <input type="submit" name="Ordcus">
+            </form>
+            <br>
+
+            <p>Maior Preço:</p>
+            <form method="POST" name="Ordcusma" action="<?php echo $_SERVER['PHP_SELF'];?>">
+                <input type="submit" name="Ordcusma">
+            </form>
+            <br>
+
+            <p>Data Mais Próxima:</p>
+            <form method="POST" name="Orddate1" action="<?php echo $_SERVER['PHP_SELF'];?>">
+                <input type="submit" name="Orddate1">
+            </form>
+            <br>
+
+            <p>Data Mais Distante:</p>
+            <form method="POST" name="Orddate2" action="<?php echo $_SERVER['PHP_SELF'];?>">
+                <input type="submit" name="Orddate2">
+            </form>
+            <br>
+
+            <p>Mais Ingressos Disponíveis:</p>
+            <form method="POST" name="Orddisp1" action="<?php echo $_SERVER['PHP_SELF'];?>">
+                <input type="submit" name="Orddisp1">
+            </form>
+            <br>
+
+            <p>Menos Ingressos Disponíveis:</p>
+            <form method="POST" name="Orddisp2" action="<?php echo $_SERVER['PHP_SELF'];?>">
+                <input type="submit" name="Orddisp2">
+            </form>
+            <br>
+
+
+
 
         </div>
 

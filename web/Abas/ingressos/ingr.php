@@ -31,7 +31,6 @@ function mstringr(){
 
     }
 
-
     $conn->close();
 
     ads();
