@@ -139,14 +139,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <div class="spcft">
             <!-- lado esquerdo -->
 
-            <img class="prfl" src="<?php echo $_SESSION['foto'];?>" width="300">
+            <img class="prfl" id="preview" src="<?php echo $_SESSION['foto'];?>" width="300">
 
             <br>
             <br>    
 
             <form method="POST" name="mudarft" action="<?php echo $_SERVER['PHP_SELF'];?>" enctype="multipart/form-data">
             
-                <input type="file" name="nvfoto" placeholder="Escolha uma imagem" />
+                <input type="file" id="inputimg" name="nvfoto" placeholder="Escolha uma imagem" />
                 <br>
             
                 <input type="submit" name="mudarft">
@@ -195,7 +195,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 </div>
 
+<script>
 
+imgpr();
+
+</script>
 
 
 </body>

@@ -221,8 +221,6 @@ function ads(){
 </div>
 
 
-
-
 </body>
 
 </html>
