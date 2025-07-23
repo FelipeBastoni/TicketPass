@@ -1,4 +1,19 @@
-<div style="text-align: center; padding-top: 15vh;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicketPass - Qr do Ingresso</title>
+
+    <link rel="stylesheet" href="stlingr.css">
+
+
+</head>
+<body>
+    
+
+
+<div class="all" style="text-align: center; padding-top: 15vh;">
 
 <p>Qr do seu Ingresso:<p>
 <br>
@@ -40,3 +55,6 @@ echo "<img onclick='cp()' style='width:200px; height:200px;' src='https://api.qr
 <button onclick="window.location.href='ingr.php'">Voltar</button>
 
 </div>
+
+</body>
+</html>

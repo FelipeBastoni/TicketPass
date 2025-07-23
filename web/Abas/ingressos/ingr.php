@@ -141,6 +141,14 @@ function ads(){
 
     <div class="cnt">
 
+
+        <div class='btnhm' onclick= alternarPainel()>
+
+            <p type='button' class='ptop'>...</p>
+
+        </div>
+
+
         <div class="logo" onclick="window.location.href='../inicial/indexx.php';">
 
         
@@ -217,6 +225,15 @@ function ads(){
             <div id="cnttt"></div>
     
         </div>
+
+
+
+    <div class="painel" id="painel">
+        
+        <h2>Olá!</h2>
+  
+    </div>
+
 
 </div>
 

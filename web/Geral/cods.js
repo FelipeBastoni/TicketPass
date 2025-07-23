@@ -70,3 +70,7 @@ function imgpr(){
 });
 
 }
+
+function alternarPainel() {
+    document.getElementById("painel").classList.toggle("ativo");
+}

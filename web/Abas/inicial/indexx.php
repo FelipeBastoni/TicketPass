@@ -41,6 +41,15 @@ if(isset($_SESSION['on'])){
 
     <div class="cnt">
 
+
+        <div class='btnhm' onclick= alternarPainel()>
+
+            <p type='button' class='ptop'>...</p>
+
+        </div>
+
+
+
         <div class="logo" onclick="window.location.href='indexx.php';">
 
         
@@ -101,10 +110,48 @@ if(isset($_SESSION['on'])){
     
     <div class="carrossel"></div>
 
-    <p class="ptxt">Olá!</p>
+    <p class="ptxt">Olá! </p>
 
 </div>
 
+
+<div class="painel" id="painel">
+
+    <h2>Olá!</h2>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <p>O famoso "sobre nós"<p>
+
+
+</div>
 
 
 </html>

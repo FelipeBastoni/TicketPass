@@ -41,6 +41,16 @@ if(isset($_SESSION['on'])){
 
     <div class="cnt">
 
+
+        <div class='btnhm' onclick= alternarPainel()>
+
+            <p type='button' class='ptop'>...</p>
+
+        </div>
+
+
+
+
         <div class="logo" onclick="window.location.href='../inicial/indexx.php';">
 
         
@@ -91,6 +101,11 @@ if(isset($_SESSION['on'])){
 
         </div>
         
+
+
+
+
+
     </div>
 
 </div>
@@ -104,6 +119,19 @@ if(isset($_SESSION['on'])){
         <iframe src="https://calendar.google.com/calendar/embed?src=58cfa85bbef55fad7cfd17267cdbd67cb67f22acfd3b30e83f6490181e4b6428%40group.calendar.google.com&ctz=America%2FSao_Paulo" style="border: 0" width="1200" height="500" frameborder="0" scrolling="no"></iframe>
 
     </div>
+
+        
+
+
+
+
+
+
+  <div class="painel" id="painel">
+    <h2>Olá!</h2>
+  </div>
+
+
 
 
 </body>
