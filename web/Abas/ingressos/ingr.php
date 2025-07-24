@@ -142,9 +142,11 @@ function ads(){
     <div class="cnt">
 
 
-        <div class='btnhm' onclick= alternarPainel()>
-
-            <p type='button' class='ptop'>...</p>
+        <div class="hamburguer" onclick="this.classList.toggle('ativo'); alternarPainel()">
+        
+            <span></span>
+            <span></span>
+            <span></span>
 
         </div>
 
@@ -197,6 +199,17 @@ function ads(){
 
 <div class="centr">
 
+
+    <div class="painel" id="painel">
+    
+        <h2>Olá!</h2>
+  
+    </div>
+
+
+
+
+
     <div class="maining">
 
         <br>
@@ -227,15 +240,11 @@ function ads(){
         </div>
 
 
-
-    <div class="painel" id="painel">
-        
-        <h2>Olá!</h2>
-  
-    </div>
-
+    
 
 </div>
+
+
 
 
 </body>

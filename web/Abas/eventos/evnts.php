@@ -228,12 +228,14 @@ if(isset($_POST['Orddisp2'])){
     <div class="cnt">
 
 
-        <div class='btnhm' onclick= alternarPainel()>
-
-            <p type='button' class='ptop'>...</p>
+        <div class="hamburguer" onclick="this.classList.toggle('ativo'); alternarPainel()">
+        
+            <span></span>
+            <span></span>
+            <span></span>
 
         </div>
-
+        
 
         <div class="logo" onclick="window.location.href='../inicial/indexx.php';">
 

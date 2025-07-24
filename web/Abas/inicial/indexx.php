@@ -42,9 +42,12 @@ if(isset($_SESSION['on'])){
     <div class="cnt">
 
 
-        <div class='btnhm' onclick= alternarPainel()>
 
-            <p type='button' class='ptop'>...</p>
+        <div class="hamburguer" onclick="this.classList.toggle('ativo'); alternarPainel()">
+        
+            <span></span>
+            <span></span>
+            <span></span>
 
         </div>
 
